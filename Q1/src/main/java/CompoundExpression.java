@@ -6,8 +6,8 @@ package main.java;
 public abstract class CompoundExpression extends Expression {
     //change it back to Private after checking
 
-    public Expression firstExpression;
-    public Expression secondExpression;
+    protected Expression firstExpression;
+    protected Expression secondExpression;
 
     public CompoundExpression(Expression exp1, Expression exp2) {
         this.firstExpression = exp1;

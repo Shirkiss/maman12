@@ -8,7 +8,6 @@ import javax.swing.*;
 public class TestShape {
     public static void main(String[] args) {
 
-
         JFrame app = new JFrame();
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         DrawPanel panel = new DrawPanel();

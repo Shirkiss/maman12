@@ -10,7 +10,7 @@ public class AdditionExpression extends main.java.CompoundExpression {
     }
 
     @Override
-    public double calculate() {
+    protected double calculate() {
         return firstExpression.calculate() + secondExpression.calculate();
     }
 

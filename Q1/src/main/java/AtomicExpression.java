@@ -18,7 +18,7 @@ public class AtomicExpression extends Expression {
     }
 
     @Override
-    public double calculate() {
+    protected double calculate() {
         return getValue();
     }
 
