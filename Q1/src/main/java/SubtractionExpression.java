@@ -1,8 +1,6 @@
 package main.java;
 
-/**
- * Created by shir.cohen on 11/16/2017.
- */
+
 public class SubtractionExpression extends CompoundExpression {
 
     public SubtractionExpression(Expression exp1, Expression exp2) {

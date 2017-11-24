@@ -3,11 +3,14 @@ package main.java;
 import javax.swing.*;
 
 /**
- * Created by shir.cohen on 11/18/2017.
+ * TestShape.java
+ * Purpose: Draw shapes on JFrame based on specific instructions
+ *
+ * @author Shir Cohen
  */
+
 public class TestShape {
     public static void main(String[] args) {
-
         JFrame app = new JFrame();
         app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         DrawPanel panel = new DrawPanel();

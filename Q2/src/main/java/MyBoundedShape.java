@@ -1,15 +1,10 @@
 package main.java;
 
-import java.awt.*;
-
-/**
- * Created by shir.cohen on 11/17/2017.
- */
 public abstract class MyBoundedShape extends MyShape {
     private Boolean empty;
 
 
-    public MyBoundedShape(int x1, int y1, int x2, int y2, MyColor color, Boolean empty) {
+    MyBoundedShape(int x1, int y1, int x2, int y2, MyColor color, Boolean empty) {
         super(x1, y1, x2, y2, color);
         this.empty = empty;
     }
@@ -21,28 +16,22 @@ public abstract class MyBoundedShape extends MyShape {
             return false;
         }
         final MyBoundedShape other = (MyBoundedShape) obj;
-        if (this.width() != other.width()) {
-            return false;
-        }
-        if (this.height() != other.height()) {
-            return false;
-        }
-        return true;
+        return this.width() == other.width() && this.height() == other.height();
     }
 
-    public int width() {
-        return this.getX2() - getX1();
+    int width() {
+        return Math.abs(this.getX2() - getX1());
     }
 
-    public int height() {
-        return this.getY2() - getY1();
+    int height() {
+        return Math.abs(this.getY2() - getY1());
     }
 
-    public Boolean getEmpty() {
+    Boolean getEmpty() {
         return empty;
     }
 
-    public void setEmpty(boolean bool) {
+    void setEmpty(boolean bool) {
         this.empty = bool;
     }
 

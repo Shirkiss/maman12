@@ -2,9 +2,7 @@ package main.java;
 
 import java.awt.*;
 
-/**
- * Created by shir.cohen on 11/17/2017.
- */
+
 public class MyOval extends MyBoundedShape {
 
 
@@ -20,6 +18,5 @@ public class MyOval extends MyBoundedShape {
             g.fillOval(getX1(), getY1(), width(), height());
         }
     }
-
 
 }

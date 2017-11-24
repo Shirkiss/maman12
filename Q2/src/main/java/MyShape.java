@@ -2,9 +2,6 @@ package main.java;
 
 import java.awt.*;
 
-/**
- * Created by shir.cohen on 11/17/2017.
- */
 public abstract class MyShape implements Cloneable {
     private int x1;
     private int x2;

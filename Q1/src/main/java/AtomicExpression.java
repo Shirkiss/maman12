@@ -1,8 +1,5 @@
 package main.java;
 
-/**
- * Created by shir.cohen on 11/16/2017.
- */
 public class AtomicExpression extends Expression {
     // constractor
     public AtomicExpression(double value) {

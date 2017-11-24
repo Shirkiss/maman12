@@ -1,9 +1,6 @@
 package main.java;
 
-/**
- * Created by shir.cohen on 11/16/2017.
- */
-public class AdditionExpression extends main.java.CompoundExpression {
+public class AdditionExpression extends CompoundExpression {
 
     public AdditionExpression(Expression exp1, Expression exp2) {
         super(exp1, exp2);

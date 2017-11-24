@@ -1,10 +1,5 @@
 package main.java;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-/**
- * Created by shir.cohen on 11/14/2017.
- */
 public abstract class Expression {
     protected double value;
 

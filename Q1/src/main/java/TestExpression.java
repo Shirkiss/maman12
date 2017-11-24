@@ -29,15 +29,17 @@ public class TestExpression {
 
         for (Map.Entry<Double, ArrayList<String>> entry : map.entrySet()) {
             if (entry.getValue().size() > 1)
-            System.out.printf("%,.0f is the results of the following expressions: %s%n",entry.getKey(), entry.getValue());
+                System.out.printf("%,.0f is the results of the following expressions: %s%n", entry.getKey(), entry.getValue());
         }
 
     }
 
     /**
-     * Create random ArrayList of Expression with a given number of elements,
-     * max value of each operators in an expression and max number of operators in an expression
+     * Create random ArrayList of Expression
      *
+     * @param numberOfItems the numbers of random expressions that will create
+     * @param maxValue      the upper bound for values of each operators in an expression.
+     * @param maxLength     the upper bound for number of operators in an expression.
      * @return An ArrayList of Expression
      */
     private static ArrayList<Expression> createRandomExpressions(int numberOfItems, int maxValue, int maxLength) {

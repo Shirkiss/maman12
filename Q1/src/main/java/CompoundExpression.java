@@ -1,8 +1,5 @@
 package main.java;
 
-/**
- * Created by shir.cohen on 11/16/2017.
- */
 public abstract class CompoundExpression extends Expression {
     //change it back to Private after checking
 

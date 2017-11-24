@@ -2,9 +2,6 @@ package main.java;
 
 import java.awt.*;
 
-/**
- * Created by shir.cohen on 11/17/2017.
- */
 public class MyLine extends MyShape {
 
     public MyLine(int x1, int y1, int x2, int y2, MyColor color) {
