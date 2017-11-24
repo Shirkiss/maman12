@@ -1,33 +1,48 @@
 package main.java;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+
 
 /**
- * Created by shir.cohen on 11/15/2017.
+ * TestExpression.java
+ * Purpose: Prints expressions and there value to the screen and look for
+ * expressions with the same value
+ *
+ * @author Shir Cohen
  */
+
 public class TestExpression {
 
     public static void main(String[] args) {
 
         List<Expression> expressions = createRandomExpressions(20, 30, 3);
-
-        for (int i = 0; i < expressions.size(); i++) {
-            System.out.printf("%s = %,.0f%n", expressions.get(i), expressions.get(i).calculate());
-            for (int x = 0; x < expressions.size(); x++) {
-                if (x != i && expressions.get(x).equals(expressions.get(i)))
-                    System.out.printf("%s equals other expression %s%n", expressions.get(i), expressions.get(x));
-            }
+//        dictionary to save all calculations results
+        Map<Double, ArrayList<String>> map = new HashMap<>();
+        ArrayList<String> values;
+        for (Expression expression : expressions) {
+            values = !map.containsKey(expression.calculate()) ? new ArrayList<>() : new ArrayList<>(map.get(expression.calculate()));
+            values.add(expression.toString());
+//            add to dictionary based on the calculation
+            map.put(expression.calculate(), values);
+            System.out.printf("%s = %,.0f%n", expression, expression.calculate());
         }
+
+        for (Map.Entry<Double, ArrayList<String>> entry : map.entrySet()) {
+            if (entry.getValue().size() > 1)
+            System.out.printf("%,.0f is the results of the following expressions: %s%n",entry.getKey(), entry.getValue());
+        }
+
     }
 
     /**
-     * create random ArrayList of Expression
+     * Create random ArrayList of Expression with a given number of elements,
+     * max value of each operators in an expression and max number of operators in an expression
+     *
+     * @return An ArrayList of Expression
      */
     private static ArrayList<Expression> createRandomExpressions(int numberOfItems, int maxValue, int maxLength) {
         Random rand = new Random();
-        ArrayList<Expression> expressions = new ArrayList<Expression>();
+        ArrayList<Expression> expressions = new ArrayList<>();
 
 //        create array of expressions
         for (int i = 0; i < numberOfItems; i++) {
@@ -44,10 +59,11 @@ public class TestExpression {
             for (int x = 1; x < expressionLength; x++) {
 //                chose random operand
                 int op = rand.nextInt(2);
-                if (op == 0)
+                if (op == 0) {
                     finalExpression = new AdditionExpression(finalExpression, listOfAtomicExpression[x]);
-                else
+                } else {
                     finalExpression = new SubtractionExpression(finalExpression, listOfAtomicExpression[x]);
+                }
             }
 //            add the finalExpression to the list of expressions
             expressions.add(finalExpression);
